@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title> TODO管理システム TODO管理画面(A010)</title>
+
+        <style>
+
+        </style>
+
+    </head>
+
+    <body>
+        <script>
+            function confirmMsg(msg, actionId) {
+                if(confirm(msg) == true) {
+                    document.getElementById("A011ConfirmFlg").value = "True";
+                    document.getElementById("A011ActionId").value = actionId;
+                }
+                else { 
+                    document.getElementById("A011ConfirmFlg").value = "False";
+                    document.getElementById("A011ActionId").value = "";
+                }
+            }
+
+            function setActionId(actionId) {
+                document.getElementById("A011ActionId").value = actionId;
+                document.getElementById("A011ConfirmFlg").value = "True";
+            }
+
+            function setSelectedRow() {
+                var row = 0
+                if (document.A011Action.A011RadioArr.length == undefined) {
+                    row += 1
+                } else {
+                    for(var i=0; i<document.A011Action.A011RadioArr.length;i++){
+                        if(document.A011Action.A011RadioArr[i].checked){  
+                            row = i+1
+                        }
+                    }
+                }
+
+                var tbl = document.getElementById('A011TodoTable');
+
+                document.getElementById('A011SelectedTodoNo').value = tbl.rows[row].cells[1].innerText
+
+                document.getElementById("A011UpdateBtn").disabled = false;
+                document.getElementById("A011UpdateTodoField").disabled = false;
+                document.getElementById("A011UpdateTodoField").value = tbl.rows[row].cells[2].innerText
+
+                document.getElementById("A011DeletetBtn").disabled = false;
+            }
+        </script>
+        <div>
+            <form action="/A011Action" method="POST" name="A011Action">
+                <input type="hidden" id="A011ActionId" name="A011ActionId" value="">
+                <input type="hidden" id="A011ConfirmFlg" name="A011ConfirmFlg" value="False">
+                <input type="hidden" id="A011HiddenShainCd" name="A011HiddenShainCd" value={{shainCd}}>
+                <input type="hidden" id="A011SelectedTodoNo" name="A011SelectedTodoNo" value="">
+
+                <div style="text-align: center">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            <ul class=flashes>
+                                {% for category, message in messages %}
+                                    <li class="{{ category }}" style="color:red">{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
+                        
+                    <h1 style="background-color:#008b8b">TODO管理システム</h1>
+                    <h2 style="background-color:#008b8b">A011 TODO管理画面</h2>
+
+                    <button type="submit" id="A011BackBtn" name="A011BackBtn" onclick="confirmMsg('ログイン画面に戻りますか？', 'A011Back');">戻る</button>
+                    <br>
+                </div>
+                    
+                <div style="width: 900px; height : {{height}}px; margin: 5px; padding: 40px; border: solid 1px #999999; margin: auto;, text-align: center">
+                    
+                    <div style="text-align: center">
+
+                        <button type="submit" id="A011SearchBtn" name="A011SearchBtn" onclick="setActionId('A011Search');">検索</button>
+                        <br><br>
+
+                        <button type="submit" id="A011InsertBtn" name="A011InsertBtn" onclick="confirmMsg('追加しますか？', 'A011Insert');">追加</button>
+                        <input type="text" id="A011TodoField" name="A011TodoField" value={{A011TodoField}}>
+                        <br><br>
+
+                        <button disabled type="submit" id="A011UpdateBtn" name="A011UpdateBtn" onclick="confirmMsg('更新しますか？', 'A011Update');">更新</button>
+                        <input disabled type="text" id="A011UpdateTodoField" name="A011UpdateTodoField" value={{A011UpdateTodoField}}>
+                        <br><br>
+
+                        <table id="A011TodoTable" name="A011TodoTable" width="100%" border="1">
+                            <thead>
+                                <tr>
+                                    <th align="center">選択</th>
+                                    <th align="center">todoNo</th>
+                                    <th align="center">todo</th>
+                                    <th align="center">登録日</th>
+                                    <th align="center">更新日</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for todoNo, todo, createDate, updateDate in data %}
+                                <tr>
+                                    <td align="center"><input type="radio" id="A011RadioArr" name="A011RadioArr" onClick="setSelectedRow();"/></td>
+                                    <td align="center"><label for="A011TodoNo">{{ todoNo }}</label></td>
+                                    <td align="center"><label for="A011Todo">{{ todo }}</label></td>
+                                    <td align="center"><label for="A011CreateDate">{{ createDate }}</label></td>
+                                    <td align="center"><label for="A011UpdateDate">{{ updateDate }}</label></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <button disabled type="submit" id="A011DeletetBtn" name="A011DeletetBtn" onclick="confirmMsg('削除しますか？', 'A011Delete');">削除</button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </body>
+</html>

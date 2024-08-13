@@ -1,0 +1,42 @@
+15:06:54.181830：SELECT COUNT(*) FROM MUser WHERE shainCd = 'as' AND password = 'as' AND deleteFlg = '0'
+15:07:01.220884：SELECT COUNT(*) FROM MUser WHERE shainCd = 'admin' AND password = 'admin' AND deleteFlg = '0'
+15:11:44.812997：SELECT * FROM Todo WHERE deleteFlg = 0
+15:11:48.914542：SELECT * FROM Todo WHERE deleteFlg = 0
+15:11:57.606833：SELECT * FROM Todo WHERE deleteFlg = 0
+15:12:31.776162：SELECT * FROM Todo WHERE deleteFlg = 0
+15:12:33.694927：SELECT COUNT(*) FROM Todo WHERE shainCd = 'admin'
+15:12:33.695804：INSERT INTO Todo values("admin", 25, "", "0", "2024-05-14 15:12:33.693984", "admin", "", "")
+15:12:33.696634：INSERT INTO Todo values("admin", 25, "", "0", "2024-05-14 15:12:33.693984", "admin", "", "")
+15:12:33.697421：SELECT * FROM Todo WHERE deleteFlg = 0
+15:12:35.801702：SELECT COUNT(*) FROM Todo WHERE shainCd = 'admin'
+15:12:35.802233：INSERT INTO Todo values("admin", 26, "", "0", "2024-05-14 15:12:35.801085", "admin", "", "")
+15:12:35.802929：INSERT INTO Todo values("admin", 26, "", "0", "2024-05-14 15:12:35.801085", "admin", "", "")
+15:12:35.803472：SELECT * FROM Todo WHERE deleteFlg = 0
+15:12:41.480303：UPDATE Todo SET todo = "", updateDate = "2024-05-14 15:12:41.479413", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 25
+15:12:41.481200：UPDATE Todo SET todo = "", updateDate = "2024-05-14 15:12:41.479413", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 25
+15:12:41.481817：SELECT * FROM Todo WHERE deleteFlg = 0
+15:12:51.290594：UPDATE Todo SET todo = "asas", updateDate = "2024-05-14 15:12:51.289414", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 25
+15:12:51.292164：UPDATE Todo SET todo = "asas", updateDate = "2024-05-14 15:12:51.289414", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 25
+15:12:51.293479：SELECT * FROM Todo WHERE deleteFlg = 0
+15:15:52.349772：SELECT * FROM Todo WHERE deleteFlg = 0
+15:15:54.447819：SELECT * FROM Todo WHERE deleteFlg = 0
+15:15:58.097193：SELECT * FROM Todo WHERE deleteFlg = 0
+15:16:39.896884：SELECT * FROM Todo WHERE deleteFlg = 0
+15:16:45.742877：SELECT COUNT(*) FROM Todo WHERE shainCd = 'admin'
+15:16:45.743751：INSERT INTO Todo values("admin", 27, "as", "0", "2024-05-14 15:16:45.741916", "admin", "", "")
+15:16:45.744645：INSERT INTO Todo values("admin", 27, "as", "0", "2024-05-14 15:16:45.741916", "admin", "", "")
+15:16:45.745633：SELECT * FROM Todo WHERE deleteFlg = 0
+15:16:51.861912：UPDATE Todo SET todo = "as", updateDate = "2024-05-14 15:16:51.860778", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 1
+15:16:51.862948：UPDATE Todo SET todo = "as", updateDate = "2024-05-14 15:16:51.860778", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 1
+15:16:51.864565：SELECT * FROM Todo WHERE deleteFlg = 0
+15:16:56.135031：UPDATE Todo SET deleteFlg = "1", updateDate = "2024-05-14 15:16:56.133884", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 1
+15:16:56.136112：UPDATE Todo SET deleteFlg = "1", updateDate = "2024-05-14 15:16:56.133884", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 1
+15:16:56.136809：SELECT * FROM Todo WHERE deleteFlg = 0
+15:17:11.547585：SELECT * FROM Todo WHERE deleteFlg = 0
+15:17:16.752137：UPDATE Todo SET deleteFlg = "1", updateDate = "2024-05-14 15:17:16.751200", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 2
+15:17:16.753038：UPDATE Todo SET deleteFlg = "1", updateDate = "2024-05-14 15:17:16.751200", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 2
+15:17:16.753897：SELECT * FROM Todo WHERE deleteFlg = 0
+15:17:43.317756：SELECT * FROM Todo WHERE deleteFlg = 0
+15:17:46.100907：SELECT * FROM Todo WHERE deleteFlg = 0
+15:17:52.326968：SELECT * FROM Todo WHERE deleteFlg = 0
+15:17:56.379156：SELECT * FROM Todo WHERE deleteFlg = 0

@@ -1,0 +1,24 @@
+14:46:09.537253：SELECT COUNT(*) FROM MUser WHERE shainCd = 'admin' AND password = 'admin' AND deleteFlg = '0'
+14:46:11.284620：SELECT * FROM Todo WHERE deleteFlg = 0
+14:46:22.895094：SELECT * FROM Todo WHERE deleteFlg = 0
+14:47:00.868700：SELECT * FROM Todo WHERE deleteFlg = 0
+14:47:13.784036：SELECT * FROM Todo WHERE deleteFlg = 0
+14:47:20.049849：UPDATE Todo SET todo = "テーブルふきあ", updateDate = "2024-08-13 14:47:20.048880", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 3
+14:47:20.050797：UPDATE Todo SET todo = "テーブルふきあ", updateDate = "2024-08-13 14:47:20.048880", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 3
+14:47:20.051618：SELECT * FROM Todo WHERE deleteFlg = 0
+14:48:05.129026：SELECT * FROM Todo WHERE deleteFlg = 0
+14:48:08.305750：SELECT * FROM Todo WHERE deleteFlg = 0
+14:48:18.788363：SELECT COUNT(*) FROM MUser WHERE shainCd = 'admin1' AND password = 'admin1' AND deleteFlg = '0'
+14:48:27.598732：SELECT COUNT(*) FROM MUser WHERE shainCd = 'adminadmin' AND password = 'adminadmin' AND deleteFlg = '0'
+14:48:33.210242：SELECT COUNT(*) FROM MUser WHERE shainCd = 'admin' AND password = 'admin' AND deleteFlg = '0'
+14:48:37.523234：SELECT COUNT(*) FROM Todo WHERE shainCd = 'admin'
+14:48:37.524043：INSERT INTO Todo values("admin", 28, "", "0", "2024-08-13 14:48:37.522403", "admin", "", "")
+14:48:37.524837：INSERT INTO Todo values("admin", 28, "", "0", "2024-08-13 14:48:37.522403", "admin", "", "")
+14:48:37.525466：SELECT * FROM Todo WHERE deleteFlg = 0
+14:48:48.617001：SELECT COUNT(*) FROM Todo WHERE shainCd = 'admin'
+14:48:48.617893：INSERT INTO Todo values("admin", 29, "aaa", "0", "2024-08-13 14:48:48.616190", "admin", "", "")
+14:48:48.618612：INSERT INTO Todo values("admin", 29, "aaa", "0", "2024-08-13 14:48:48.616190", "admin", "", "")
+14:48:48.619223：SELECT * FROM Todo WHERE deleteFlg = 0
+14:48:58.619655：UPDATE Todo SET todo = "asanas", updateDate = "2024-08-13 14:48:58.618779", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 28
+14:48:58.620447：UPDATE Todo SET todo = "asanas", updateDate = "2024-08-13 14:48:58.618779", updateUser = "admin" WHERE shainCd = "admin" AND todoNo = 28
+14:48:58.621038：SELECT * FROM Todo WHERE deleteFlg = 0

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title> TODO管理システム ログイン画面(A010)</title>
+
+        <style>
+
+        </style>
+
+    </head>
+
+    <body>
+        <script>
+            function confirmMsg(msg, btnId) {
+                if(confirm(msg) == true) {
+                    document.getElementById("A010ConfirmFlg").value = "True";
+                }
+                else { 
+                    document.getElementById("A010ConfirmFlg").value = "False";
+                    document.getElementById("A010HiddenShainCd").value = document.getElementById("A010ShainCd").value;
+                }
+            }
+
+            function setActionId(actionId) {
+                document.getElementById("A010ActionId").value = actionId;
+                document.getElementById("A010ConfirmFlg").value = "True";
+            }
+        </script>
+        <form action="/A010Action" method="POST">
+            <input type="hidden" id="A010ActionId" name="A010ActionId" value="">
+            <input type="hidden" id="A010ConfirmFlg" name="A010ConfirmFlg" value="False">
+
+            <div style="text-align: center">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes>
+                            {% for category, message in messages %}
+                                <li class="{{ category }}" style="color:red">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+
+                <h1 style="background-color:#ff9933">TODO管理システム</h1>
+                <h2 style="background-color:#ff9933">A010 ログイン画面</h2>
+
+                <br>
+            </div>
+
+            <div style="width: 400px; height : 100px; margin: 5px; padding: 40px; border: solid 1px #999999; margin: auto;">
+
+                <div style="text-align: center">
+                    <label for="A010LabelShainCd" >社員コード：</label> &nbsp;
+                    <input type="text" id="A010ShainCd" name="A010ShainCd" value={{shainCd}}>
+                    <br>
+
+                    <label for="A010LabelPassword">パスワード：</label> &nbsp;
+                    <input type="password" id="A010Password" name="A010Password" value="">
+                    <br><br>
+
+                    <button type="submit" id="A010LoginBtn" name="A010LoginBtn" onclick="setActionId('A010Login');">ログイン</button>
+                </div>
+
+            </div><br>
+
+        </form>
+
+    </body>
+</html>
